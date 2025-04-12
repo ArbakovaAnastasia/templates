@@ -34,7 +34,7 @@ function selectYear(year) {
 }
 
 function compareYears(firstYear, secondYear) {
-	let compareYearResult;
+	let compareYearResult = false;
 	if (firstYear > secondYear) {
 		alert('Начальный год не может быть больше конечного. Введите еще раз.');
 		compareYearResult = false;
