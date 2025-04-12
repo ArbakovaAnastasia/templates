@@ -1,38 +1,46 @@
-// Написать программу, которая последовательно запрашивает у пользователя два числа, 
+// Программа, которая последовательно запрашивает у пользователя два числа, 
 // после чего сравнивает их и выводит одно из сообщений: “Первое число больше второго”, 
-// “Второе число больше первого” или “Числа равны”. Необходимо учесть ситуации, 
-// когда пользователь вместо числа ввел строку или вообще не ввел ничего. 
-// Для получения числа от пользователя пригодится функция prompt, а для вывода – alert.
+// “Второе число больше первого” или “Числа равны”.
+// Есть проверка на корректный ввод.
 
-let a;
-let b;
+let firstNumber;
+let secondNumber;
 
-do {
-  a = prompt("Введите первое число", "");
-} while (isNumeric(a) == false);
+firstNumber = inputNumber("Введите первое число");
+secondNumber = inputNumber("Введите второе число");
 
-do {
-  b = prompt("Введите второе число", "");
-} while (isNumeric(b) == false);
+compareNumber(firstNumber, secondNumber);
 
-if (a > b) {
-  alert("Число " + a + " больше числа " + b);
-} else if (a < b) {
-  alert("Число " + b + " больше числа " + a);
-} else {
-  alert("Числа " + a + " и " + b + " равны");
-}
+// ---
+function inputNumber (message) {
+	let number;
+	do {
+		number = prompt(message, "");
+	} while (isNumeric(number) == false);
+	return number;
+};
 
 function isNumeric(number) {
-  let isNumericResult = false;
-  //первое условие replace заменяет все пробелы на пустоту, /внутренности/ - регулярка,
-  // \s возвращает пробелы, g-global - все пробелы, без него вернет только первый
-  //количество пробелов равно 0 или является NotANumber нечисло
-  if (number.replace(/\s/g, "").length === 0 || isNaN(number)) {
-    alert("Напишите число.");
-    isNumericResult = false;
-  } else {
-    isNumericResult = true;
-  }
-  return isNumericResult;
+	let isNumericResult = false;
+	//первое условие replace заменяет все пробелы на пустоту, /внутренности/ - регулярка,
+	// \s возвращает пробелы, g-global - все пробелы, без него вернет только первый
+	//количество пробелов равно 0 или является NotANumber нечисло
+	if (number.replace(/\s/g, "").length === 0 || isNaN(number)) {
+		isNumericResult = false;
+		alert("Напишите число");
+	} else {
+		isNumericResult = true;
+		alert(`Число ${number} принято`);
+	}
+	return isNumericResult;
+}
+
+function compareNumber(a, b) {
+	if (a > b) {
+		alert(`Число ${a} больше числа ${b}`);
+    } else if (a < b) {
+        alert(`Число ${b} больше числа ${a}`);
+    } else {
+        alert(`Числа ${a} и ${b} равны`);
+	}
 }
