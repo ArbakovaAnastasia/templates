@@ -10,10 +10,14 @@ do {
 	secondYear = inputMessageYear("Введите конечный год");
 } while (compareYears(firstYear, secondYear) == false);
 
-leapYear(firstYear, secondYear);
+consoleLeapYear(firstYear, secondYear);
 
 // ---
 function inputMessageYear(message) {
+	if (typeof message === 'undefined') {
+		return;
+	}
+
 	let year;
 	do {
 		year = prompt(message, "");
@@ -22,33 +26,45 @@ function inputMessageYear(message) {
 }
 
 function selectYear(year) {
-	let selectYearResult = false;
-	if (year < 1900 || year > 2016 || year.replace(/\s/g, "").length === 0 || isNaN(year)) {
-		selectYearResult = false;
+	if (typeof year  === 'undefined') {
+		return;
+	}
+
+	let functionResult = false;
+	if (year < 1900 || year > 2016 || year.replace(/\s/g, "").length === 0 || isNaN(year) || !Number.isInteger(Number(year))) {
+		functionResult = false;
 		alert("Введите корректное число от 1900 до 2016");
 	} else {
-		selectYearResult = true;
+		functionResult = true;
 		alert("Год " + year + " принято");
 	}
-	return selectYearResult;
+	return functionResult;
 }
 
 function compareYears(firstYear, secondYear) {
-	let compareYearResult = false;
+	if (typeof firstYear  === 'undefined' || typeof secondYear  === 'undefined') {
+		return;
+	}
+
+	let functionResult = false;
 	if (firstYear > secondYear) {
 		alert('Начальный год не может быть больше конечного. Введите еще раз.');
-		compareYearResult = false;
+		functionResult = false;
 	} else if (firstYear == secondYear) {
 		alert('Года не могут быть равны. Введите еще раз.');
-		compareYearResult = false;
+		functionResult = false;
 	} else {
 		alert('Числа успешно введены');
-		compareYearResult = true;
+		functionResult = true;
 	};
-	return compareYearResult;
+	return functionResult;
 } 
 
-function leapYear(firstYear, secondYear) {
+function consoleLeapYear(firstYear, secondYear) {
+	if (typeof firstYear  === 'undefined' || typeof secondYear  === 'undefined') {
+		return;
+	}
+	
 	for (let i = firstYear; i <= secondYear; i++) {
 		if ((i % 400) == 0 || ((i % 4) == 0 && (i % 100) != 0)) {
 			console.log(i);

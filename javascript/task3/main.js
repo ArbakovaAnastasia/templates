@@ -6,11 +6,7 @@ let number;
 let sum = 0;
 
 while (number = prompt('Введите число, кнопка Отмена - выход', '')) {
-    if (number.replace(/\s/g, "").length === 0 || isNaN(number)) {
-		alert("Некорректный ввод");
-	} else {
-		sum = sum + parseInt(number);
-	}
+    (number.replace(/\s/g, "").length === 0 || isNaN(number) || !Number.isInteger(Number(number))) ? alert("Некорректный ввод") : sum = sum + parseInt(number);
 }
 
 alert(sum);

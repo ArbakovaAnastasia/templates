@@ -9,10 +9,14 @@ let secondNumber;
 firstNumber = inputNumber("Введите первое число");
 secondNumber = inputNumber("Введите второе число");
 
-compareNumber(firstNumber, secondNumber);
+compareNumbers(firstNumber, secondNumber);
 
 // ---
 function inputNumber (message) {
+	if (typeof message === 'undefined') {
+		return;
+	}
+
 	let number;
 	do {
 		number = prompt(message, "");
@@ -21,21 +25,30 @@ function inputNumber (message) {
 };
 
 function isNumeric(number) {
-	let isNumericResult = false;
+	if (typeof number === 'undefined') {
+		return;
+	}
+
+	let functionResult = false;
 	//первое условие replace заменяет все пробелы на пустоту, /внутренности/ - регулярка,
 	// \s возвращает пробелы, g-global - все пробелы, без него вернет только первый
 	//количество пробелов равно 0 или является NotANumber нечисло
-	if (number.replace(/\s/g, "").length === 0 || isNaN(number)) {
-		isNumericResult = false;
+	//!Number.isInteger(Number(number)) проверка на дробные
+	if (number.replace(/\s/g, "").length === 0 || isNaN(number) || !Number.isInteger(Number(number))) {
+		functionResult = false;
 		alert("Напишите число");
 	} else {
-		isNumericResult = true;
+		functionResult = true;
 		alert(`Число ${number} принято`);
 	}
-	return isNumericResult;
+	return functionResult;
 }
 
-function compareNumber(a, b) {
+function compareNumbers(a, b) {
+	if (typeof a === 'undefined' || typeof b === 'undefined') {
+		return;
+	}
+
 	if (a > b) {
 		alert(`Число ${a} больше числа ${b}`);
     } else if (a < b) {
