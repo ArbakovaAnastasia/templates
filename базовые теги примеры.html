@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Базовые теги</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+.n1711-lk-teacher-upcomminglesson-content-text-stroke1-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: auto;
+    height: 100px;
+    padding: 4px 8px;
+    border-radius: 16px;
+    border: none;
+    background-color: transparent;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+.n1711-lk-teacher-upcomminglesson-content-text-stroke1-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(316.04deg, #FE8606 13.99%, #FEE073 99.95%); 
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+.n1711-lk-teacher-upcomminglesson-content-text-stroke1-button-text{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--additional-gradients-yellow-down, #FE8606);
+}
+    </style>
+</head>
+
+<body>
+    
+    <button class="n1711-lk-teacher-upcomminglesson-content-text-stroke1-button">
+        <span class="n1711-lk-teacher-upcomminglesson-content-text-stroke1-button-text">пример градиентного бордера на прозрачной кнопке</span>
+    </button>
+
+    <h1>Привет h1</h1>
+    <h2>Привет h2</h2>
+    <h3>Привет h3</h3>
+    <h4>Привет h4</h4>
+    <h5>Привет h5</h5>
+    <h6>Привет h6</h6>
+
+    <a href="#" target="_blank">Ссылка на новую страницу</a>
+    <p>
+        Тег p - Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit
+        incidunt quo minus natus repellendus sint veritatis voluptas, aliquid,
+        ipsam repellat sunt molestiae facere beatae labore alias consequuntur,
+        dolore odit. Nulla!
+    </p>
+    <i>H66 Гнойный и неуточненный средний отит</i>
+    <b>J01 Острый синусит</b>
+    <u>J32 Хронический синусит</u>
+    <s>K25 Язва желудка</s>
+    <ol>
+        <li>Нумерованный</li>
+        <li>пункт
+            <ol style="list-style: georgian">
+            <li>пункт
+                <ol style="list-style: lower-greek">
+                    <li>пункт</li>
+                    <li>пункт</li>
+                </ol>
+            </li>
+            <li>пункт</li>
+            </ol>
+        </li>
+        <li>пункт</li>
+    </ol>
+    <ul>
+        <li>Не нумерованный</li>
+        <li>
+            Пункт 2.
+            <ul>
+                <li>Подпункт 2.1.</li>
+                <li>
+                    Подпункт 2.2.
+                    <ul>
+                        <li>Подпункт 2.2.1.</li>
+                        <li>Подпункт 2.2.2.</li>
+                    </ul>
+                </li>
+                <li>Подпункт 2.3.</li>
+            </ul>
+        </li>
+        <li>Пункт 3.</li>
+    </ul>
+
+    <h1>Отправка заявки на конференцию</h1>
+    <h2>Основные данные</h2>
+    <b>* Фамилия, имя, отчество:</b><br><br>
+    <input type="text" size="50" required="required"><br><br>
+    <b>Дата рождения:</b><br><br>
+    <input type="date"><br><br>
+    <b>Пол:</b><br><br>
+    <input type="radio" name="sex"> мужской &nbsp;
+    <input type="radio" name="sex"> женский &nbsp;
+
+    <h2>Данные для создания личного кабинета</h2>
+    <b>* Адрес электронной почты:</b><br><br>
+    <input type="email" size="50" required="required"><br><br>
+    <b>* Пароль для создания личного кабинета:</b><br><br>
+    <input type="password" size="50" required="required"><br><br>
+    <b>* Подтверждение пароля:</b><br><br>
+    <input type="password" size="50" required="required"><br><br>
+
+    <h2>Материалы для конференции</h2>
+    <b>* Тема доклада:</b><br><br>
+    <input type="text" size="50" required="required"><br><br>
+    <b>* Тезисы доклада (не более 1000 символов):</b><br><br>
+    <textarea cols="50" rows="10" required="required"></textarea><br><br>
+
+    <b>Файл презентации:</b><br><br>
+    <input type="file"><br><br>
+    <h2>Дополнительные опции</h2>
+    <input type="checkbox"><label>Проживание в отеле</label><br>
+    <input type="checkbox"><label>Завтрак</label><br>
+    <input type="checkbox"><label>Обед</label><br>
+    <input type="checkbox"><label>Ужин</label><br>
+
+
+    <hr>
+    <input type="submit">
+    <hr>
+    <p style="font-size:12px">* Поля, отмеченные звездочкой, являются обязательными для заполнения</p>
+
+    <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+
+    <h1>Статистика компании за неделю</h1>
+    <table style="text-align: center;" border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <th rowspan="2">Дата</th>
+            <th colspan="2">Доход</th>
+            <th colspan="2">Расход</th>
+        </tr>
+        <tr>
+            <th>План</th>
+            <th>Факт</th>
+            <th>План</th>
+            <th>Факт</th>
+        </tr>
+        <tr>
+            <td>01.01</td>
+            <td>12345</td>
+            <td>12345</td>
+            <td>12345</td>
+            <td>12345</td>
+        </tr>
+        <tr>
+            <td>02.01</td>
+            <td>12345</td>
+            <td>12345</td>
+            <td>12345</td>
+            <td>12345</td>
+        </tr>
+        <tr>
+            <td>03.01</td>
+            <td>12345</td>
+            <td>12345</td>
+            <td>12345</td>
+            <td>12345</td>
+        </tr>
+        <tr>
+            <td>04.01</td>
+            <td>12345</td>
+            <td>12345</td>
+            <td>12345</td>
+            <td>12345</td>
+        </tr>
+        <tr>
+            <td>05.01</td>
+            <td>12345</td>
+            <td>12345</td>
+            <td>12345</td>
+            <td>12345</td>
+        </tr>
+        <tr>
+            <th>Итого:</th>
+            <th>12345</th>
+            <th>12345</th>
+            <th>12345</th>
+            <th>12345</th>
+        </tr>
+    </table>
+
+</body>
+
+</html>
